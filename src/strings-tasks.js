@@ -320,8 +320,11 @@ function reverseString(str) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  const strRes = str.split('');
+  const strSort = strRes.sort();
+  const res = strSort.join('');
+  return res;
 }
 
 /**
@@ -336,8 +339,11 @@ function orderAlphabetically(/* str */) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  if (str.includes(substring)) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -354,8 +360,13 @@ function containsSubstring(/* str, substring */) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  if (str.match(/[aeiouy]/gi)) {
+    const resArr = str.match(/[aeiouy]/gi);
+    const res = resArr.length;
+    return res;
+  }
+  return 0;
 }
 
 /**
@@ -371,8 +382,20 @@ function countVowels(/* str */) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const strLower = str.toLowerCase();
+  const strClean = strLower.replaceAll(/[^a-zA-Z0-9]|\s\s+/g, '');
+  const strArr = strClean.split('');
+  const res = [];
+  for (let i = strArr.length; i >= 0; i -= 1) {
+    res.push(strArr[i]);
+  }
+  const resres = res.toString('');
+  const result = resres.replace(/[^a-zA-Z0-9]/g, '');
+  if (result === strClean) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -387,7 +410,7 @@ function isPalindrome(/* str */) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
+function findLongestWord(sentence) {
   throw new Error('Not implemented');
 }
 

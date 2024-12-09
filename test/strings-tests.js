@@ -273,7 +273,7 @@ describe('strings-tasks', () => {
     assert.equal(tasks.reverseString(''), '');
     assert.equal(tasks.reverseString('a'), 'a');
     assert.equal(tasks.reverseString('5'), '5');
-  });*/
+  });
 
   it.optional(
     'orderAlphabetically should order characters in alphabetical order for a given string',
@@ -286,7 +286,7 @@ describe('strings-tasks', () => {
       assert.equal(tasks.orderAlphabetically(''), '');
     }
   );
-/*
+
   it.optional(
     'containsSubstring should return true if the input string contains the specified substring',
     () => {
@@ -337,7 +337,7 @@ describe('strings-tasks', () => {
       assert.equal(tasks.isPalindrome('Was it a car or a cat I saw?'), true);
       assert.equal(tasks.isPalindrome('No lemon, no melon'), true);
     }
-  );
+  );*/
 
   it.optional(
     'findLongestWord should return the longest word in the sentence',
@@ -356,7 +356,7 @@ describe('strings-tasks', () => {
       assert.equal(tasks.findLongestWord(''), '');
     }
   );
-
+/*
   it.optional('reverseWords should reverse each word in the sentence', () => {
     assert.equal(tasks.reverseWords('Hello World'), 'olleH dlroW');
     assert.equal(
