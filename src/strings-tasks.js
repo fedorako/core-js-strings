@@ -409,10 +409,10 @@ function isPalindrome(str) {
  *   findLongestWord('The quick brown fox') => 'quick'
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
- */
+ 
 function findLongestWord(sentence) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Returns the string where each word is reversed.
@@ -423,10 +423,10 @@ function findLongestWord(sentence) {
  * @example:
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
- */
-function reverseWords(/* str */) {
+ 
+function reverseWords(/* str ) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Inverts the case of each character in the given string.
@@ -438,10 +438,10 @@ function reverseWords(/* str */) {
  *   invertCase('Hello, World!') =>  'hELLO, wORLD!'
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
- */
-function invertCase(/* str */) {
+ 
+function invertCase(/* str ) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
@@ -455,10 +455,10 @@ function invertCase(/* str */) {
  * @example
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
- */
-function getStringFromTemplate(/* firstName, lastName */) {
+ 
+function getStringFromTemplate(/* firstName, lastName ) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -469,10 +469,10 @@ function getStringFromTemplate(/* firstName, lastName */) {
  * @example
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
- */
-function extractNameFromTemplate(/* value */) {
+ 
+function extractNameFromTemplate(/* value ) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -484,10 +484,10 @@ function extractNameFromTemplate(/* value */) {
  *   unbracketTag('<div>') => 'div'
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
- */
-function unbracketTag(/* str */) {
+ 
+function unbracketTag(/* str ) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
@@ -503,10 +503,10 @@ function unbracketTag(/* str */) {
  *      'bon.scott@yahoo.com'
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
- */
-function extractEmails(/* str */) {
+ 
+function extractEmails(/* str ) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Encode specified string with ROT13 cipher
@@ -523,10 +523,10 @@ function extractEmails(/* str */) {
  *   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
- */
-function encodeToRot13(/* str */) {
+ 
+function encodeToRot13(/* str ) {
   throw new Error('Not implemented');
-}
+}*/
 
 /**
  * Returns playid card id.
@@ -551,11 +551,11 @@ function encodeToRot13(/* str */) {
  *     ...
  *   'Q♠' => 50
  *   'K♠' => 51
- */
-function getCardId(/* value */) {
+ 
+function getCardId(/* value ) {
   throw new Error('Not implemented');
 }
-
+*/
 module.exports = {
   getStringLength,
   isString,
