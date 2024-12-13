@@ -412,7 +412,7 @@ function isPalindrome(str) {
  
 function findLongestWord(sentence) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Returns the string where each word is reversed.
@@ -426,7 +426,7 @@ function findLongestWord(sentence) {
  
 function reverseWords(/* str ) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Inverts the case of each character in the given string.
@@ -441,7 +441,7 @@ function reverseWords(/* str ) {
  
 function invertCase(/* str ) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
@@ -458,7 +458,7 @@ function invertCase(/* str ) {
  
 function getStringFromTemplate(/* firstName, lastName ) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -472,7 +472,7 @@ function getStringFromTemplate(/* firstName, lastName ) {
  
 function extractNameFromTemplate(/* value ) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -487,7 +487,7 @@ function extractNameFromTemplate(/* value ) {
  
 function unbracketTag(/* str ) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
@@ -506,7 +506,7 @@ function unbracketTag(/* str ) {
  
 function extractEmails(/* str ) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Encode specified string with ROT13 cipher
@@ -526,7 +526,7 @@ function extractEmails(/* str ) {
  
 function encodeToRot13(/* str ) {
   throw new Error('Not implemented');
-}*/
+} */
 
 /**
  * Returns playid card id.
@@ -576,7 +576,7 @@ module.exports = {
   orderAlphabetically,
   containsSubstring,
   isPalindrome,
-  findLongestWord,
+  /* findLongestWord,
   reverseWords,
   invertCase,
   getStringFromTemplate,
@@ -584,5 +584,5 @@ module.exports = {
   extractEmails,
   unbracketTag,
   encodeToRot13,
-  getCardId,
+  getCardId, */
 };
