@@ -3,7 +3,7 @@ const tasks = require('../src/strings-tasks');
 it.optional = require('../extensions/it-optional');
 
 describe('strings-tasks', () => {
-/*  it.optional('getStringLength should return the length of string', () => {
+  it.optional('getStringLength should return the length of string', () => {
     assert.equal(tasks.getStringLength('aaaaa'), 5);
     assert.equal(tasks.getStringLength('b'), 1);
     assert.equal(tasks.getStringLength(''), 0);
@@ -337,7 +337,7 @@ describe('strings-tasks', () => {
       assert.equal(tasks.isPalindrome('Was it a car or a cat I saw?'), true);
       assert.equal(tasks.isPalindrome('No lemon, no melon'), true);
     }
-  );*/
+  );
 
   it.optional(
     'findLongestWord should return the longest word in the sentence',
@@ -356,7 +356,7 @@ describe('strings-tasks', () => {
       assert.equal(tasks.findLongestWord(''), '');
     }
   );
-/*
+
   it.optional('reverseWords should reverse each word in the sentence', () => {
     assert.equal(tasks.reverseWords('Hello World'), 'olleH dlroW');
     assert.equal(
@@ -751,5 +751,4 @@ describe('strings-tasks optimal implementation', () => {
       'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
     );
   });
-  */
 });
