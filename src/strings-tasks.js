@@ -426,11 +426,19 @@ function reverseWords(str) {
  *   invertCase('Hello, World!') =>  'hELLO, wORLD!'
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
- 
+ */
 function invertCase(str) {
-  return str.swapcase();
+  return str
+    .split('') // Split the string into an array of characters
+    .map((char) => {
+      if (char === char.toUpperCase()) {
+        return char.toLowerCase();
+      }
+      return char.toUpperCase();
+    })
+    .join('');
 }
-*/
+
 /**
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
@@ -443,10 +451,10 @@ function invertCase(str) {
  * @example
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
- 
-function getStringFromTemplate(/* firstName, lastName ) {
-  throw new Error('Not implemented');
-} */
+ */
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
+}
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -457,10 +465,13 @@ function getStringFromTemplate(/* firstName, lastName ) {
  * @example
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
- 
-function extractNameFromTemplate(/* value ) {
-  throw new Error('Not implemented');
-} */
+ */
+function extractNameFromTemplate(value) {
+  const res = value.split(' ');
+  const resFirst = res[1].replace(/[^a-zA-Z0-9]/g, '');
+  const resLast = res[2].replace(/[^a-zA-Z0-9]/g, '');
+  return `${resFirst} ${resLast}`;
+}
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -472,10 +483,11 @@ function extractNameFromTemplate(/* value ) {
  *   unbracketTag('<div>') => 'div'
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
- 
-function unbracketTag(/* str ) {
-  throw new Error('Not implemented');
-} */
+ */
+function unbracketTag(str) {
+  const res = str.replace(/[^a-zA-Z0-9]/g, '');
+  return res;
+}
 
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
@@ -491,10 +503,14 @@ function unbracketTag(/* str ) {
  *      'bon.scott@yahoo.com'
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
- 
-function extractEmails(/* str ) {
-  throw new Error('Not implemented');
-} */
+ */
+function extractEmails(str) {
+  const res = str.split(';');
+  const resRes = res
+    .map((email) => email.trim())
+    .filter((email) => email.length > 0);
+  return resRes;
+}
 
 /**
  * Encode specified string with ROT13 cipher
@@ -511,10 +527,20 @@ function extractEmails(/* str ) {
  *   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
- 
-function encodeToRot13(/* str ) {
-  throw new Error('Not implemented');
-} */
+ */
+function encodeToRot13(str) {
+  const strSplit = str.split('').map((char) => {
+    if (char >= 'A' && char <= 'Z') {
+      return String.fromCharCode(((char.charCodeAt(0) - 65 + 13) % 26) + 65);
+    }
+    if (char >= 'a' && char <= 'z') {
+      return String.fromCharCode(((char.charCodeAt(0) - 97 + 13) % 26) + 97);
+    }
+    return char;
+  });
+  const strRes = strSplit.join('');
+  return strRes;
+}
 
 /**
  * Returns playid card id.
@@ -539,11 +565,65 @@ function encodeToRot13(/* str ) {
  *     ...
  *   'Q♠' => 50
  *   'K♠' => 51
- 
-function getCardId(/* value ) {
-  throw new Error('Not implemented');
+ */
+function getCardId(value) {
+  const cards = [
+    'A♣',
+    '2♣',
+    '3♣',
+    '4♣',
+    '5♣',
+    '6♣',
+    '7♣',
+    '8♣',
+    '9♣',
+    '10♣',
+    'J♣',
+    'Q♣',
+    'K♣',
+    'A♦',
+    '2♦',
+    '3♦',
+    '4♦',
+    '5♦',
+    '6♦',
+    '7♦',
+    '8♦',
+    '9♦',
+    '10♦',
+    'J♦',
+    'Q♦',
+    'K♦',
+    'A♥',
+    '2♥',
+    '3♥',
+    '4♥',
+    '5♥',
+    '6♥',
+    '7♥',
+    '8♥',
+    '9♥',
+    '10♥',
+    'J♥',
+    'Q♥',
+    'K♥',
+    'A♠',
+    '2♠',
+    '3♠',
+    '4♠',
+    '5♠',
+    '6♠',
+    '7♠',
+    '8♠',
+    '9♠',
+    '10♠',
+    'J♠',
+    'Q♠',
+    'K♠',
+  ];
+  return cards.indexOf(value);
 }
-*/
+
 module.exports = {
   getStringLength,
   isString,
@@ -566,11 +646,11 @@ module.exports = {
   isPalindrome,
   findLongestWord,
   reverseWords,
-  /* invertCase,
+  invertCase,
   getStringFromTemplate,
   extractNameFromTemplate,
   extractEmails,
   unbracketTag,
   encodeToRot13,
-  getCardId, */
+  getCardId,
 };

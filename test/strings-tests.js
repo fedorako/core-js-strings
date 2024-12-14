@@ -370,7 +370,7 @@ describe('strings-tasks', () => {
     );
     assert.equal(tasks.reverseWords(''), '');
   });
-/*
+
   it.optional(
     'invertCase should return the string with the case of each character inverted.',
     () => {
@@ -525,7 +525,7 @@ describe('strings-tasks', () => {
         );
       });
     }
-  ); */
+  );
 });
 
 describe('strings-tasks optimal implementation', () => {
@@ -727,7 +727,7 @@ describe('strings-tasks optimal implementation', () => {
       'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
     );
   });
-/*
+
    it.optional('optimal implementation of invertCase', function test() {
     const fnStr = tasks.invertCase.toString();
     if (!fnStr.includes('return')) {
@@ -750,5 +750,5 @@ describe('strings-tasks optimal implementation', () => {
       true,
       'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
     );
-  });*/
+  });
 });
