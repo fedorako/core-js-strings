@@ -79,7 +79,7 @@ function concatenateStrings(value1, value2) {
  *   getFirstChar('') => ''
  */
 function getFirstChar(value) {
-  const result = value.slice(0, 1);
+  const result = value.charAt(0);
   return result;
 }
 
@@ -165,7 +165,8 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
 function removeFirstOccurrences(str, value) {
-  if (str.includes(value) === true) {
+  const index = str.indexOf(value);
+  if (index !== -1) {
     const res = str.replace(value, '');
     return res;
   }
@@ -231,13 +232,7 @@ function sumOfCodes(str) {
  *   startsWith('Hello World', 'Hello') => true
  */
 function startsWith(str, substr) {
-  const lengthRes = substr.length;
-  const strStart = str.split('', lengthRes);
-  const res = strStart.join('');
-  if (res === substr) {
-    return true;
-  }
-  return false;
+  return str.startsWith(substr);
 }
 
 /**
@@ -252,14 +247,7 @@ function startsWith(str, substr) {
  *   endsWith('Hello World', 'Hello') => false
  */
 function endsWith(str, substr) {
-  const lengthRes = substr.length;
-  const strRes = str.length;
-  const cut = strRes - lengthRes;
-  const strCut = str.substring(cut);
-  if (strCut === substr) {
-    return true;
-  }
-  return false;
+  return str.endsWith(substr);
 }
 
 /**
@@ -276,15 +264,9 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  let min = minutes.toString();
-  let sec = seconds.toString();
-  if (min.length === 1) {
-    min = `0${min}`;
-  }
-  if (sec.length === 1) {
-    sec = `0${sec}`;
-  }
-  return `${min}:${sec}`;
+  const min = minutes.toString();
+  const sec = seconds.toString();
+  return `${min.padStart(2, '0')}:${sec.padStart(2, '0')}`;
 }
 
 /**
@@ -409,10 +391,13 @@ function isPalindrome(str) {
  *   findLongestWord('The quick brown fox') => 'quick'
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
- 
+ */
 function findLongestWord(sentence) {
-  throw new Error('Not implemented');
-} */
+  const resSplit = sentence.split(/\s+/);
+  return resSplit.reduce((longest, current) => {
+    return current.length > longest.length ? current : longest;
+  }, '');
+}
 
 /**
  * Returns the string where each word is reversed.
@@ -423,10 +408,13 @@ function findLongestWord(sentence) {
  * @example:
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
- 
-function reverseWords(/* str ) {
-  throw new Error('Not implemented');
-} */
+ */
+function reverseWords(str) {
+  const strRes = str.split(' ');
+  const strSort = strRes.map((word) => word.split('').reverse().join(''));
+  const res = strSort.join(' ');
+  return res;
+}
 
 /**
  * Inverts the case of each character in the given string.
@@ -439,10 +427,10 @@ function reverseWords(/* str ) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  
-function invertCase(/* str ) {
-  throw new Error('Not implemented');
-} */
-
+function invertCase(str) {
+  return str.swapcase();
+}
+*/
 /**
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
@@ -576,9 +564,9 @@ module.exports = {
   orderAlphabetically,
   containsSubstring,
   isPalindrome,
-  /* findLongestWord,
+  findLongestWord,
   reverseWords,
-  invertCase,
+  /* invertCase,
   getStringFromTemplate,
   extractNameFromTemplate,
   extractEmails,
